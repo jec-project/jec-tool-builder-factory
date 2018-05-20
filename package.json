@@ -4,6 +4,9 @@
   "description": "JEC Builder Factory - An easy-to-use tool to create Joshua Bloch's builder pattern implementations from DTOs.",
   "main": "dist/com/onsoft/jec-tool-builder-factory-index",
   "types": "types/jec-tool-builder-factory.d.ts",
+  "bin": {
+    "factory": "./bin/factory"
+  },
   "scripts": {
     "test": "mocha juta/tiger/run-unit-tests"
   },
@@ -13,13 +16,13 @@
   },
   "keywords": [
     "JEC",
-    "Builder Factory",
-    "GlassCat",
-    "Archetypes",
+    "Builder",
+    "Factory",
+    "BLOCH",
     "JavaScript",
     "TypeScript",
-    "server",
-    "applications"
+    "MOCK",
+    "DTO"
   ],
   "author": "Pascal ECHEMANN",
   "license": "SEE LICENSE IN LICENSE",
@@ -27,7 +30,9 @@
     "url": "https://github.com/jec-project/jec-tool-builder-factory/issues"
   },
   "dependencies": {
-    "fs-extra": "^3.0.1"
+    "jec-tool-cli": "^1.0.0",
+    "fs-extra": "^3.0.1",
+    "typescript-parser": "^2.4.0"
   },
   "homepage": "https://github.com/jec-project/jec-tool-builder-factory#readme",
   "devDependencies": {
