@@ -14,8 +14,12 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {CommandManager} from "jec-tool-cli";
+import {FactoryCommandManager} from "./manager/FactoryCommandManager";
+
 //-> Program Start
 
-console.log('run factory processes here');
+const manager:CommandManager = new FactoryCommandManager("Builder Factory");
+manager.process();
 
 //<- Program End
