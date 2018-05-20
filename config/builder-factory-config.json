@@ -1,0 +1,32 @@
+[
+  {
+    "command": "help",
+    "alias": "h",
+    "description": "Provides help information for factory commands.",
+    "signature": "[command]"
+  },
+  {
+    "command": "version",
+    "alias": "v",
+    "action": "version",
+    "description": "Gets the current JEC Factory Builder CLI version."
+  },
+  {
+    "command": "create-builder",
+    "alias": null,
+    "action": "create-builder",
+    "description": "Creates a new builder for the specified source class, or interface.",
+    "signature": "--source [--output]",
+    "options": [
+      {
+        "name": "source",
+        "description": "Indicates the source file for which to create the new builder."
+      },
+      {
+        "name": "output",
+        "required": false,
+        "description": "Indicates the path to the folder where to write the new builder file."
+      }
+    ]
+  }
+]

@@ -14,43 +14,49 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {CommandManager, AbstractCommandManager} from "jec-tool-cli";
-import {FactoryBuilderCommandStrategy} from "./strategy/FactoryBuilderCommandStrategy";
+import {CommandStrategy, AbstractCommandStrategy, SplashScreenBuilder} from "jec-tool-cli";
 import * as path from "path";
 
 /**
- * The <code>FactoryCommandManager</code> class runs specific GlassCat commands
- * depending on users inputs.
+ * The <code>FactoryBuilderCommandStrategy</code> class invokes specific builder
+ * factory commands depending on users inputs.
  */
-export class FactoryCommandManager extends AbstractCommandManager
-                                   implements CommandManager {
+export class FactoryBuilderCommandStrategy extends AbstractCommandStrategy
+                                           implements CommandStrategy {
   
   //////////////////////////////////////////////////////////////////////////////
   // Constructor function
   //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Creates a new <code>FactoryCommandManager</code> instance.
+   * Creates a new <code>FactoryBuilderCommandStrategy</code> instance.
    * 
-   * @param {string} processTitle the name of the  current process.
+   * @param {string} version the version of the current process.
    */
-  constructor(processTitle:string) {
-    super(
-      processTitle, 
-      path.resolve(__dirname, "../../../../../../../package.json")
-    );
-    this.initManager();
+  constructor(version:string) {
+    super(version);
+    this.initStrategy();
   }
   
   //////////////////////////////////////////////////////////////////////////////
-  // Private methods
+  // Private properties
   //////////////////////////////////////////////////////////////////////////////
 
   /**
    * Initialises this object. This method is called by the constructor function.
    */
-  private initManager():void {
-    this.__strategy = new FactoryBuilderCommandStrategy(this.__version);
+  private initStrategy():void {
+    const CFG:any = require(
+      "../../../../../../../../config/builder-factory-config.json"
+    );
+    this.setScriptPath(
+      path.resolve(
+        __dirname, 
+        "../../../../../../../../dist/com/jec/tool/builder/factory/script"
+      )
+    );
+    console.log(SplashScreenBuilder.build("JEC Builder Factory"));
+    this.initCommands(CFG);
   }
   
   //////////////////////////////////////////////////////////////////////////////
@@ -60,7 +66,7 @@ export class FactoryCommandManager extends AbstractCommandManager
   /**
    * @inheritDoc
    */
-  public process():void {
-    super.process();
+  public invokeCommand():void {
+    super.invokeCommand();
   }
 }

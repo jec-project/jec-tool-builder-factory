@@ -30,8 +30,8 @@
     "url": "https://github.com/jec-project/jec-tool-builder-factory/issues"
   },
   "dependencies": {
-    "jec-tool-cli": "^1.0.0",
     "fs-extra": "^3.0.1",
+    "jec-tool-cli": "^1.0.1",
     "typescript-parser": "^2.4.0"
   },
   "homepage": "https://github.com/jec-project/jec-tool-builder-factory#readme",

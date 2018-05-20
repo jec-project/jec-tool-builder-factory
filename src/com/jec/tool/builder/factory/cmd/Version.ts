@@ -15,9 +15,7 @@
 //   limitations under the License.
 
 import {Command, ConsoleCliLogger} from "jec-tool-cli";
-
-// Config file:
-const CFG:any = require("../../../package.json");
+import * as path from "path";
 
 /**
  * The <code>Version</code> command displays the current JEC Builder Factory
@@ -42,6 +40,7 @@ export class Version implements Command {
    * @inheritDoc
    */
   public run(argv:any):void {
+    const CFG:any = require("../../../../../../../package.json");
     ConsoleCliLogger.getInstance().log(`${CFG.name} - version: ${CFG.version}`);
   }
 }
