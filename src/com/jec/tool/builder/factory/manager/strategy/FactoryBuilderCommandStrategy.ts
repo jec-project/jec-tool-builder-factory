@@ -55,7 +55,7 @@ export class FactoryBuilderCommandStrategy extends AbstractCommandStrategy
         "../../../../../../../../dist/com/jec/tool/builder/factory/script"
       )
     );
-    console.log(SplashScreenBuilder.build("JEC Builder Factory"));
+    console.log(SplashScreenBuilder.build("JEC Factory"));
     this.initCommands(CFG);
   }
   

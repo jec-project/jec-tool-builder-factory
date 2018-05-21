@@ -5,7 +5,7 @@
   "main": "dist/com/onsoft/jec-tool-builder-factory-index",
   "types": "types/jec-tool-builder-factory.d.ts",
   "bin": {
-    "factory": "./bin/factory"
+    "jec-factory": "./bin/jec-factory"
   },
   "scripts": {
     "test": "mocha juta/tiger/run-unit-tests"

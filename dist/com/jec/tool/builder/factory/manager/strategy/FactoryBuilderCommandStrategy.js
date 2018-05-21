@@ -10,7 +10,7 @@ class FactoryBuilderCommandStrategy extends jec_tool_cli_1.AbstractCommandStrate
     initStrategy() {
         const CFG = require("../../../../../../../../config/builder-factory-config.json");
         this.setScriptPath(path.resolve(__dirname, "../../../../../../../../dist/com/jec/tool/builder/factory/script"));
-        console.log(jec_tool_cli_1.SplashScreenBuilder.build("JEC Builder Factory"));
+        console.log(jec_tool_cli_1.SplashScreenBuilder.build("JEC Factory"));
         this.initCommands(CFG);
     }
     invokeCommand() {
