@@ -24,13 +24,13 @@ $ npm install jec-tool-builder-factory -g
 ## Usage
 
 ```bash
-jec-factory help
+$ jec-factory help
 ```
 
 To create a new builder for the `form/util/dto/AddressDto` run:
 
 ```bash
-jec-factory create-builder --source="form/util/dto/AddressDto" --output="form/util/builder"
+$ jec-factory create-builder --source="form/util/dto/AddressDto" --output="form/util/builder"
 ```
 
 Then, just use the `AddressDtoBuilder` class method as follow, to easily create new `AddressDto` instances: 
