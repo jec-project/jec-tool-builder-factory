@@ -21,6 +21,29 @@ Set up the JEC Builder Factory module with:
 $ npm install jec-tool-builder-factory -g
 ```
 
+## Usage
+
+To create a new builder for the `form/util/dto/AddressDto` run:
+
+```bash
+create-builder --source="form/util/dto/AddressDto" --output="form/util/builder"
+```
+
+Then, just use the `AddressDtoBuilder` class method as follow, to easily create new `AddressDto` instances: 
+
+```typescript
+import {AddressDto} from "form/util/dto/AddressDtoBuilder";
+import {AddressDtoBuilder} from "form/util/builder/AddressDtoBuilder";
+
+const newAddress:AddressDto = AddressDtoBuilder.create()
+                                               .address1("my funny street")
+                                               .zipCode("00000")
+                                               .city("My City")
+                                               .country("My Country")
+                                               .build();
+console.log(newAddress.city); // outputs "My City"
+```
+
 ## Running Tests
 
 To execute all unit tests, use:
